@@ -1,10 +1,14 @@
 import * as React from 'react';
 
-const SearchBox = ({ searchChange }) => {
+interface ISearchBoxProps {
+  searchChange(event: React.SyntheticEvent<HTMLInputElement>): void 
+}
+
+const SearchBox = ({ searchChange }: ISearchBoxProps) => {
   return (
     <div className='pa2'>
       <input
-        className='pa3 ba b--green bg-lightest-blue'
+        className='pa3 ba b--green bg-lightest-blue w-50'
         type='search'
         placeholder='search robots'
         onChange={searchChange}
